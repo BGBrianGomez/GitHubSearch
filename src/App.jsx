@@ -133,10 +133,11 @@ function App() {
             ? projects
                 .slice(0, allProjects ? projects.length : 4)
                 .map((project) => (
+                  <a href={project.html_url } target="_blank">
                   <div
                     key={project.id}
                     className="bg-gradient-to-br from-slate-900 to-indigo-950 p-4 w-full rounded-xl flex flex-col gap-4 text-gray-400"
-                  >
+                    >
                     <h2 className="text-lg font-semibold">{project.name}</h2>
                     <p className="text-gray-400 opacity-90">
                       {project.description}
@@ -161,6 +162,7 @@ function App() {
                       <div>{timeAgo(project.updated_at)}</div>
                     </div>
                   </div>
+                      </a>
                 ))
             : ""}
         </div>
